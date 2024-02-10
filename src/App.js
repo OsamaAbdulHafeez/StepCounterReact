@@ -1,24 +1,37 @@
 import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import styled from 'styled-components';
+import Stages from './Components/Stages';
+import Counter from './Components/Counter';
 
+
+const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const Wrapper = styled.div`
+  background-color: brown;
+  width: 60%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 function App() {
+  const [step,setstep] = useState(1)
+  const [count,setCount] = useState(0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Wrapper>
+        <Stages step={step} setstep={setstep}/>
+        <Counter step={step} count={count} setCount={setCount}/>
+      </Wrapper>
+    </Container>
   );
 }
 
