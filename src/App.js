@@ -4,6 +4,7 @@ import './App.css';
 import styled from 'styled-components';
 import Stages from './Components/Stages';
 import Counter from './Components/Counter';
+import Dates from './Components/Date';
 
 
 const Container = styled.div`
@@ -25,11 +26,14 @@ const Wrapper = styled.div`
 function App() {
   const [step,setstep] = useState(1)
   const [count,setCount] = useState(0)
+  const [currentDate,setCurrentDate] = useState(new Date())
+
   return (
     <Container>
       <Wrapper>
         <Stages step={step} setstep={setstep}/>
         <Counter step={step} count={count} setCount={setCount}/>
+        <Dates count={count} currentDate={currentDate}/>
       </Wrapper>
     </Container>
   );

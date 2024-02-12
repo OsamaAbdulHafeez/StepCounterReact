@@ -20,17 +20,17 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
 `
-const Counter = ({ step, count, setCount }) => {
+const Counter = ({ step, count, setCount}) => {
     const subtract = () => {
-        if(count-step<0){
+        if (count - step < 0) {
             setCount(0)
         }
         else if (count > 0) {
-            setCount(count-step)
+            setCount(count - step)
         }
     }
     const Add = () => {
-        setCount(count+step)
+        setCount(count + step)
     }
     return (
         <Container>
